@@ -6,6 +6,7 @@ const { body, validationResult } = require('express-validator');
 
 //Fetch all notes using GET /api/notes/fetchallnotes
 router.get('/notes/fetchallnotes', fetchUser, async (req, res) => {
+     console.log('Fetching all notes');
     try {
         const notes = await Note.find({ user: req.user.id });
         res.json(notes);
@@ -23,6 +24,7 @@ router.post('/notes/addnote', fetchUser, [
     async (req, res) => {
         const { title, description, tag } = req.body;
         const result = validationResult(req);
+         console.log('Adding notes');
         try {
             if (result.isEmpty()) {
                 const note = new Note({
