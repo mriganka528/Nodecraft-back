@@ -7,7 +7,7 @@ const port = 9000;
 app.use(express.json());
 app.use(cors());
 //All Routes
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   res.json({message:"Hello,myself Mriganka"})
 })
 app.use('/api/auth', require('./routes/auth'));
