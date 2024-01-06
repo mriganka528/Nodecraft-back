@@ -18,5 +18,5 @@ app.use('/', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`iNoteBook backend listening on port ${port}`)
+  console.log(`iNoteBook backend listening in https://notecraft-back.vercel.app/`)
 })
