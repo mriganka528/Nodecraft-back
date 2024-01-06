@@ -1,14 +1,21 @@
-const connectTomongo = require('./db');
-const express = require('express');
-var cors = require('cors');
-connectTomongo();
-const app = express();
-const port = 9000;
-app.use(express.json());
-app.use(cors());
-//All Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/note', require('./routes/notes'));
+const connectToMongo = require('./db');
+const express = require('express')
+var cors = require('cors')
+
+connectToMongo();
+const app = express()
+const port = 5000
+app.use(cors())
+
+app.use(express.json())
+
+// Available Routes
+app.use('/', (req, res) => {
+  res.json({"message": "App deployed successfully"})
+})
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/notes', require('./routes/notes'))
+
 
 app.listen(port, () => {
   console.log(`NoteCraft listening on https://notecraft-back.vercel.app/`)
