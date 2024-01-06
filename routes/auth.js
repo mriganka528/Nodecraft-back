@@ -118,7 +118,7 @@ router.post('/getUser', fetchUser, async (req, res) => {
         res.status(500).send({ error: "Please authenticate with correct credentials." });
     }
 });
-router.post('/hello' async (req, res) => {
+router.post('/hello', async (req, res) => {
     res.json({msg:"Hellllooooo"});
 });
 module.exports = router;
