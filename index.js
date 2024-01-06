@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 //All Routes
 app.use('/', (req, res) => {
-  res.send('Hello,myself Mriganka')
+  res.json({message:"Hello,myself Mriganka"})
 })
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/note', require('./routes/notes'));
